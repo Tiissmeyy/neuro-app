@@ -9,8 +9,6 @@
 
 body {
     display: flex;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 * {
@@ -49,9 +47,11 @@ a {
 }
 
 .visible {
+    z-index: 2;
     opacity: 1;
 }
 
 .unvisible {
+    z-index: -1;
     opacity: 0;
 }

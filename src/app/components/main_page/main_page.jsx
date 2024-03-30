@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import Cards_Container from "../cards_container/cards_container";
 import { satis } from "@/app/fonts";
+import Button from "../button/button";
 
 const Main_Page =() => {
   return (
@@ -19,9 +20,9 @@ const Main_Page =() => {
                 <p>Les informations partagées lors des consultations restent confidentielles.</p>
             </div>
 
-            <button className="main_button">
-                Prendre rendez vous
-            </button>
+            <Button actions={[()=>console.log("banana"), ()=>console.log("split")]} text={"Prendre rendez vous"}>
+                <p>Prendre RDV</p>
+            </Button>
 
             <Cards_Container />
 

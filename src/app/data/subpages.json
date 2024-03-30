@@ -1,5 +1,6 @@
 {
     "psycho": {
+        "title": "Suivi Psychologique",
         "description": [
             "Le suivi psychologique est un accompagnement dont le but est de faire changer un comportement qui pose problème ou changer des croyances négatives et irréelles incorporées dans le schéma de pensée.",
             "Le psychologue psychothérapeute avec une écoute bienveillante et attentive, surveille (sans jugement) les mécanismes de la pensée en place.",
@@ -22,6 +23,7 @@
             "- Démarche de bien-être et développement personnel : meilleure estime de soi et connaissance plus précise de ses besoins, amélioration l’adéquation entre ses valeurs et la réalité de leur vie."
         ]
     },"emdr": {
+        "title": "L'EMDR",
         "description": [
             "La thérapie EMDR (Eye Movement Desensitization and Reprocessing ou Désensibilisation et Retraitement par les Mouvements Oculaires) permet de retraiter des vécus traumatiques, non digérés, à forte ou faible dose émotionnelle."
         ],
@@ -59,6 +61,7 @@
         ]
     },
     "neuro": {
+        "title": "Bilan Neuropsychologique",
         "description": [
             "Le bilan neuropsychologique est une évaluation approfondie du système cognitif, englobant la mémoire, l'attention, la concentration, le langage, l'efficience intellectuelle et tant d’autres mécanismes impliqués dans le raisonnement.", 
             "Grâce à des outils d’évaluation spécifiques adaptés au niveau et à l’âge de la personne , le neuropsychologue identifie la nature et l’intensité des perturbations cognitives, en même temps qu’il repère les ressources et le potentiel pour proposer des solutions qui visent à réduire le retentissement d’éventuelles difficultés au quotidien."
@@ -88,6 +91,7 @@
             "Il permet également aux parents et à l’entourage de mieux comprendre le fonctionnement cognitif de la personne évaluée. Il est par conséquent possible, à partir du tableau clinique dressé d’aider la personne à optimiser son fonctionnement et ainsi contribuer à son épanouissement personnel."
         ]
     },"cogni": {
+        "title": "Remediation Cognitive",
         "description": [
             "La remédiation cognitive est un type d’entrainement réadaptatif offrant des exercices dont le but est d'améliorer l'attention, la mémoire, le langage et les fonctions exécutives."
         ],
