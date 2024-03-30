@@ -1,95 +1,53 @@
+"use client"
+
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
+import Cards_Container from "./components/cards_container/cards_container";
+import Main_Page from "./components/main_page/main_page";
+import Hamburger from "./components/hamburger/hambuger";
+import Aside_Sec from "./components/aside_sec/aside_sec";
+import Subpage from "./components/subpages/subpage";
+import Banner from "./components/banner/banner";
 
 export default function Home() {
+    const [open_menu, set_open_menu] = useState(false)
+    const [selected_content, set_selected_content] = useState(0)
+    const selection_array = [
+        <Main_Page key={0} />,
+        <Subpage content={1} />,
+        <Subpage content={2} />,    
+        <Subpage content={3} />,    
+    ]
+
+    const handle_click = ()=>{
+        set_open_menu(prev=>!prev)
+    }
+
+    const handle_selection = (e) => {
+        const value = parseInt(e.target.value, 10);
+        set_selected_content(value);
+        console.log(value)
+    }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+        <Aside_Sec open_nav={open_menu} />
+        <main className={styles.main}>
+            {selection_array[selected_content]}
+            <Banner handle_selection={handle_selection} />
+            <div className={`${styles.filter} ${open_menu ? "visible": "unvisible"}`}>
+            </div> 
+            
+        </main>
+        <div className={styles.menu_div} onClick={()=>handle_click()}>
+            <div className={styles.burger_div} style={!open_menu ? {borderRadius: "6px"}: {borderRadius: "50%"}}>
+               <Hamburger open={open_menu} />
+            </div>
+            <h2>MENU</h2>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+        
+    </>  );
 }
+
+

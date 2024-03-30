@@ -1,0 +1,34 @@
+{
+    "list": [
+        {
+            "title": "ENFANTS/ADOS",
+            "carac": [
+                "- Hyper activité (TDA-H)",
+                "- Anxiété",
+                "- Difficultés scolaire (DYS)",
+                "- Gestions des émotions"
+            ],
+            "src": "/img/kids.jpg"
+        },
+        {
+            "title": "ADULTES",
+            "carac": [
+                "- Crise d’angoisse",
+                "- Perte de confiance ",
+                "- Traumatisme",
+                "- Accidents de la vie (Décès, séparations, etc)"
+            ],
+            "src": "/img/adults.jpg"
+        },
+        {
+            "title": "SENIORS",
+            "carac": [
+                "- Trouble de la mémoire",
+                "- Perte d’autonomie",
+                "- Diagnostique maladies neurodégénératives",
+                "- Soutien aux aidants "
+            ],
+            "src": "/img/senior.jpg"
+        }
+    ]
+}
