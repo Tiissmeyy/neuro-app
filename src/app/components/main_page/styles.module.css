@@ -19,5 +19,6 @@
 .main_describe {
     color: var(--text-color);
     text-align: center;
-    width: 50%;
+    width: 60%;
+    font-size: 1.08rem;
 }
