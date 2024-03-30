@@ -1,8 +1,13 @@
+"use client"
+
 import Image from "next/image";
 import styles from "./banner.module.css"
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Banner = ({handle_selection}) => {
+    const [y_pos, set_y_pos] = useState(null)
+    const banner_ref = useRef(null)
+
     const buttons = [
         "SUIVI PSYCHOLOGIQUE",
         "EMDR",
@@ -12,7 +17,17 @@ const Banner = ({handle_selection}) => {
 
     useEffect(()=>{
         const scroll = () => {
-            console.log("ca scroll")
+            if (banner_ref.current) {
+                const { top, height } = banner_ref.current.getBoundingClientRect();
+                const isAtBottom = top + height >= window.innerHeight;
+                
+                if (!isAtBottom) {
+                    banner_ref.current.style.position = 'fixed';
+                    banner_ref.current.style.bottom = '0';
+                } else {
+                    banner_ref.current.style.position = '0';
+                }
+            }
         }
         addEventListener("scroll", scroll)
         return () => {
@@ -22,7 +37,7 @@ const Banner = ({handle_selection}) => {
 
     return (
         <>
-            <div className={styles.banner}>
+            <div ref={banner_ref} className={styles.banner}>
                 {buttons.map((e,i)=>{
                     return (
                         <button key={i} 
