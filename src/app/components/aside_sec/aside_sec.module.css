@@ -14,6 +14,7 @@
     object-fit: cover;
     width: 100%; /* Assurez-vous que l'image couvre toute la largeur du conteneur */
     height: 100%; /* Assurez-vous que l'image couvre toute la hauteur du conteneur */
+    transition: all 500ms ease-out;
 }
 
 .nav_container {

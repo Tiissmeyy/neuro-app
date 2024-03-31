@@ -1,8 +1,7 @@
 "use client"
 
 import "./globals.css";
-import { inter } from "./fonts";
-import { russo } from "./fonts";
+import { russo, roboto } from "./fonts";
 import Aside_Sec from "./components/aside_sec/aside_sec";
 import Hamburger from "./components/hamburger/hambuger";
 import Banner from "./components/banner/banner";
@@ -54,7 +53,7 @@ export default function RootLayout({ children }) {const [open_menu, set_open_men
     
   return (
     <html lang="en">
-        <body className={russo.className}>
+        <body className={roboto.className}>
             
             <Aside_Sec selected_content={selected_content} open_menu={open_menu} />
             <main className={styles.main}>
