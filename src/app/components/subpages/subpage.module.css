@@ -1,9 +1,8 @@
 .subpage {
-    padding: 40px;
+    padding: 80px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 40px;
 }
 
 .subpage h1 {
