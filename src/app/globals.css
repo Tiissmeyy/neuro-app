@@ -11,6 +11,8 @@ body {
     display: flex;
     overflow-x: hidden;
     overflow-y: scroll;
+    height: 100%;
+    background-color: var(--white);
 }
 
 * {
