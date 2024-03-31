@@ -1,13 +1,10 @@
 "use client"
 
-import { CSSTransition } from "react-transition-group";
 import Image from "next/image";
 import styles from "./aside_sec.module.css"
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import Link_W from "../link_w/link_w";
-import Transition_Handler from "@/app/transition";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Aside_Sec = ({close_menu,open_menu}) => {
     const pathname = usePathname()
@@ -64,6 +61,7 @@ const Aside_Sec = ({close_menu,open_menu}) => {
                 
                     return (
                             <motion.div
+                                key={pathname + i}
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
                                 exit={{y:-20,opacity: 0}}
