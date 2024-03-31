@@ -8,15 +8,15 @@ const Subpage = ({content}) => {
         <p>{content.description}</p>
         <h2 className={satis.className}>Pour qui ?</h2>
         {content.who.map((e,i)=>{
-            return <p key={i}>{e}</p>
+            return <p key={i} className={styles.text}>{e}</p>
         })}
         <h2 className={satis.className}>Méthode</h2>
         {content.methode.map((e,i)=>{
-            return <p key={i}>{e}</p>
+            return <p key={i} className={styles.text}>{e}</p>
         })}
         <h2 className={satis.className}>Objectifs</h2>
         {content.goal.map((e,i)=>{
-            return <p key={i}>{e}</p>
+            return <p key={i} className={styles.text}>{e}</p>
         })}
         <Button link={true} href={"/"}>
             <p>Retour Acceuil</p>

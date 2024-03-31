@@ -40,8 +40,8 @@ const Button = ({children, actions, color, size, border, link, href="/"}) => {
     switch(size){
         default: {
             params.radius = "25px"
-            params.font_size = "1.0rem"
-            params.padding = "15px"
+            params.font_size = "0.88rem"
+            params.padding = "10px"
             params.border = border ? "2px solid blue" : "none"
         }
     }

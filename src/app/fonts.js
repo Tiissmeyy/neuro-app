@@ -1,4 +1,4 @@
-import { Inter, Russo_One, Satisfy, Roboto } from "next/font/google";
+import { Inter, Russo_One, Caveat, Roboto } from "next/font/google";
 
 export const inter = Inter({
     subsets: ["latin"],
@@ -9,7 +9,7 @@ export const russo = Russo_One({
     weight: "400"
 })
 
-export const satis = Satisfy({
+export const satis = Caveat({
     subsets: ["latin"],
     weight: "400"
 })
