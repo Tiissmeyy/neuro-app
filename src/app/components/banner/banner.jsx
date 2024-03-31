@@ -2,17 +2,31 @@
 
 import Image from "next/image";
 import styles from "./banner.module.css"
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const Banner = ({handle_selection}) => {
+    const router = useRouter();
     const [y_pos, set_y_pos] = useState(null)
     const banner_ref = useRef(null)
 
     const buttons = [
-        "SUIVI PSYCHOLOGIQUE",
-        "EMDR",
-        "BILAN NEUROPSYCHOLOGIQUE",
-        "REMEDIATION COGNITIVE"
+        {
+            text:"SUIVI PSYCHOLOGIQUE",
+            href: "/mes_services/suivi_psy"
+        },
+        {
+            text:"EMDR",
+            href: "/mes_services/emdr"
+        },
+        {
+            text:"BILAN NEUROPSYCHOLOGIQUE",
+            href: "/mes_services/bilan_neuro"
+        },
+        {
+            text:"REMEDIATION COGNITIVE",
+            href: "/mes_services/remediation"
+        }
     ]
 
     useEffect(()=>{
@@ -38,12 +52,18 @@ const Banner = ({handle_selection}) => {
     return (
         <>
             <div ref={banner_ref} className={styles.banner}>
-                {buttons.map((e,i)=>{
+                {buttons.map((button,i)=>{
                     return (
                         <button key={i} 
                             value={i+1}
-                            onClick={(e) =>handle_selection(e)}>
-                                {e}
+                            onClick={
+                                (e) => {
+                                handle_selection(e)
+                                router.push(button.href)
+                                }
+                            }
+                        >
+                                {button.text}
                         </button>
                     )
                 })}
