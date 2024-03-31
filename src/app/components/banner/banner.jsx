@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "./banner.module.css"
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { satis } from "@/app/fonts";
 
 const Banner = ({handle_selection}) => {
     const router = useRouter();
@@ -12,7 +14,7 @@ const Banner = ({handle_selection}) => {
 
     const buttons = [
         {
-            text:"SUIVI PSYCHOLOGIQUE",
+            text:"Suivi Psychologique",
             href: "/mes_services/suivi_psy"
         },
         {
@@ -20,11 +22,11 @@ const Banner = ({handle_selection}) => {
             href: "/mes_services/emdr"
         },
         {
-            text:"BILAN NEUROPSYCHOLOGIQUE",
+            text:"Bilan Neurologique",
             href: "/mes_services/bilan_neuro"
         },
         {
-            text:"REMEDIATION COGNITIVE",
+            text:"Remédiation cognitive",
             href: "/mes_services/remediation"
         }
     ]
@@ -54,17 +56,13 @@ const Banner = ({handle_selection}) => {
             <div ref={banner_ref} className={styles.banner}>
                 {buttons.map((button,i)=>{
                     return (
-                        <button key={i} 
-                            value={i+1}
-                            onClick={
-                                (e) => {
-                                handle_selection(e)
-                                router.push(button.href)
-                                }
-                            }
+                        <Link key={i}
+                            link={true}
+                            href={button.href}
+
                         >
-                                {button.text}
-                        </button>
+                                <p className={satis.className}>{button.text}</p>
+                        </Link>
                     )
                 })}
                 <Image src={"/img/banner.jpg"} width={100} height={100} alt="banner" ></Image>

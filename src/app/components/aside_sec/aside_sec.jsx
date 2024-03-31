@@ -1,21 +1,43 @@
 import Image from "next/image";
 import styles from "./aside_sec.module.css"
+import { usePathname } from "next/navigation";
 
 const Aside_Sec = ({open_menu, selected_content}) => {
+    const pathname = usePathname()
     const images_array = [
-        "/img/bg_home_small.jpg",
-        "/img/psycho.jpg",
-        "/img/emdr.jpg",
-        "/img/neuro.jpg",
-        "/img/cogni.jpg"
+        {
+            img:"/img/bg_home_small.jpg",
+            href: "/"
+        },
+        {
+            img: "/img/psycho.jpg",
+            href:"/mes_services/suivi_psy"
+        },
+        {
+            img:"/img/emdr.jpg",
+            href: "/mes_services/emdr"
+        },
+        {
+            img:"/img/neuro.jpg",
+            href: "/mes_services/bilan_neuro"
+        },
+        {
+            img:"/img/cogni.jpg",
+            href: "/mes_services/remediation"
+        }
+        
+        
     ]
     console.log(selected_content)
     return (
     
         <>
             <aside className={`${styles.image_container} ${!open_menu ? "visible": "unvisible"}`}>
-            <Image src={images_array[selected_content]} alt="aside image" fill>
-            </Image>
+            {images_array.map((e,i) => {
+                return (
+                    <Image key={i} className={pathname === e.href ? "visible": "unvisible"} src={e.img} alt={"section image"} fill></Image>
+                )
+            })}
                 
             
             <div className={styles.footer}>

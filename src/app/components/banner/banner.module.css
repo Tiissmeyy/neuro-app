@@ -10,7 +10,7 @@
     padding: 20px;
 }
 
-.banner button {
+.banner a {
     z-index: 1;
     background-color: inherit;
     border: 2px solid var(--white);
@@ -20,7 +20,7 @@
     font-weight: 600;
 }
 
-.banner button:hover {
+.banner a:hover {
     background-color: var(--white);
     color: var(--text-color);
     cursor: pointer;

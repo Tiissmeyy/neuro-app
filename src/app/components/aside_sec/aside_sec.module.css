@@ -9,6 +9,7 @@
 }
 
 .image_container img {
+    z-index: -1;
     filter: grayscale(73%) brightness(90%);
     object-fit: cover;
     width: 100%; /* Assurez-vous que l'image couvre toute la largeur du conteneur */
