@@ -78,9 +78,9 @@ const Aside_Sec = ({close_menu,open_menu}) => {
                 <div className={styles.footer_logo}>
                     <Image src={"/img/neuro_logo2.png"} alt="logo" width={20} height={20}></Image>
                 </div>
-                <p className={styles.footer_name}>​​ -  Suelen Amorim  -</p>
-                <p className={styles.footer_adress}>Cabinet de Psychologie & Neuropsychologie  -  42, quai Charles Roissard 73000 Chambery</p>
-                <p className={styles.footer_number}>07 83 24 43 02 </p>
+                <p className={styles.footer_name}>​​ -  Karine Duval  -</p>
+                <p className={styles.footer_adress}>Cabinet de Psychologie & Neuropsychologie  -  42, quai Jean du Jardin 69000 Paris</p>
+                <p className={styles.footer_number}>09 82 37 64 51</p>
             </div>
             </aside>
             <nav className={`${styles.image_container} ${styles.nav_container} ${!open_menu ? "unvisible": "visible"}`}>

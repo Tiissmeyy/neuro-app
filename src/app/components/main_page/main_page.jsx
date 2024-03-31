@@ -11,7 +11,7 @@ const Main_Page =() => {
             <Image className={styles.main_logo} src={"/img/neuro_logo.png"} width={100} height={100} alt="logo du site Neuro" />
 
             {/* Titre du site  */}
-            <h1 className={styles.main_title}>SUELEN AMORIM <span>Cabinet de Psychologie et de Neuropsychologie à Chambéry</span></h1>
+            <h1 className={styles.main_title}>Karine Duval <span>Cabinet de Psychologie et de Neuropsychologie à Chambéry</span></h1>
             <p className="mb-var">_____</p>
 
             {/* description du site  */}
