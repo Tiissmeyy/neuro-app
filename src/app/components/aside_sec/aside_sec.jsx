@@ -6,6 +6,8 @@ import styles from "./aside_sec.module.css"
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Link_W from "../link_w/link_w";
+import Transition_Handler from "@/app/transition";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Aside_Sec = ({close_menu,open_menu}) => {
     const pathname = usePathname()
@@ -57,21 +59,22 @@ const Aside_Sec = ({close_menu,open_menu}) => {
     
         <>
             <aside className={`${styles.image_container} ${!open_menu ? "visible": "unvisible"}`}>
+                        <AnimatePresence mode="wait" >
             {images_array.map((e,i) => {
                 
-                return (
-                    <CSSTransition
-                        in={pathname === e.href} // La condition pour monter ou démonter l'image
-                        timeout={500} // Doit correspondre à la durée de votre transition CSS
-                        classNames="fade" // Le préfixe pour les classes de transition
-                        unmountOnExit // Démonte le composant après la transition de sortie
-                        mountOnEnter 
-                    >
-                        <Image key={i} className={`${styles.main_image} ${pathname === e.href ? "visible": "unvisible"}`} src={e.img} alt={"section image"} fill></Image>
-                    </CSSTransition>
+                    return (
+                            <motion.div
+                                initial={{opacity:0}}
+                                animate={{opacity:1}}
+                                exit={{y:-20,opacity: 0}}
+                                transition={{ease: "easeInOut", duration: 0.75}}
+                            >
+                                {pathname === e.href && <Image key={i} className={`${styles.main_image}`} src={e.img} alt={"section image"} fill></Image> }
+                            </motion.div>
+                        
+                    )})}
                     
-                )
-            })}
+                        </AnimatePresence>                
                 
             
             <div className={styles.footer}>

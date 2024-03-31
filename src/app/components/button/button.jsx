@@ -12,14 +12,14 @@ const Button = ({children, actions, color, size, border, link, href="/"}) => {
     const container_ref = useRef(null)
 
     useEffect(()=> {
-        if(container_ref.current){
+        if(container_ref && container_ref.current){
             set_container_width(container_ref.current.offsetWidth)
+            addEventListener("resize", ()=> set_container_width(container_ref.current.offsetWidth))
+            return ()=> {
+                removeEventListener("resize", ()=> set_container_width(container_ref.current.offsetWidth))
+            }
         }
-        addEventListener("resize", ()=> set_container_width(container_ref.current.offsetWidth))
-        return ()=> {
-            removeEventListener("resize", ()=> set_container_width(container_ref.current.offsetWidth))
-        }
-    })
+    },[container_ref])
 
     let params = {
         bg: "",
