@@ -1,0 +1,11 @@
+.links_underscore {
+    background-color: var(--white);
+    height: 2px;
+    margin-top: 5px;
+    transition: width 500ms ease;
+    width: 0;
+}
+
+.links_underscore:hover {
+    width: 100%;
+}

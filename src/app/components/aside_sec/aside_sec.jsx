@@ -1,8 +1,12 @@
+"use client"
+
 import Image from "next/image";
 import styles from "./aside_sec.module.css"
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Link_W from "../link_w/link_w";
 
-const Aside_Sec = ({open_menu, selected_content}) => {
+const Aside_Sec = ({close_menu,open_menu}) => {
     const pathname = usePathname()
     const images_array = [
         {
@@ -24,11 +28,30 @@ const Aside_Sec = ({open_menu, selected_content}) => {
         {
             img:"/img/cogni.jpg",
             href: "/mes_services/remediation"
-        }
-        
-        
+        }     
     ]
-    console.log(selected_content)
+    const buttons = [
+        {
+            text:"Acceuil",
+            href: "/"
+        },
+        {
+            text:"Suivi Psychologique",
+            href: "/mes_services/suivi_psy"
+        },
+        {
+            text:"EMDR",
+            href: "/mes_services/emdr"
+        },
+        {
+            text:"Bilan Neurologique",
+            href: "/mes_services/bilan_neuro"
+        },
+        {
+            text:"Remédiation cognitive",
+            href: "/mes_services/remediation"
+        }
+    ]
     return (
     
         <>
@@ -50,15 +73,15 @@ const Aside_Sec = ({open_menu, selected_content}) => {
             </div>
             </aside>
             <nav className={`${styles.image_container} ${styles.nav_container} ${!open_menu ? "unvisible": "visible"}`}>
-                <a>ACCUEIL</a>
-                <a>QUI-SUIS JE ?</a>
-                <a>LE CABINET</a>
-                <a>SUIVI PSYCHOLOGIQUE</a>
-                <a>EMDR</a>
-                <a>BILAN NEUROPSYCHOLOGIQUE</a>
-                <a>REMÉDIATION COGNITIVE</a>
-                <a>TARIFS</a>
-                <a>CONTACT</a>
+                {buttons.map((e,i)=>{
+                    return (
+                        <Link_W close_menu={close_menu} key={i} href={e.href} path={pathname}>
+                            {e.text}
+                        </Link_W>
+                    )
+                    
+                    
+                })}
             </nav>
         </>
     )
