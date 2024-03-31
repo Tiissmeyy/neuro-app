@@ -1,5 +1,6 @@
 "use client"
 
+import { CSSTransition } from "react-transition-group";
 import Image from "next/image";
 import styles from "./aside_sec.module.css"
 import { usePathname } from "next/navigation";
@@ -57,8 +58,18 @@ const Aside_Sec = ({close_menu,open_menu}) => {
         <>
             <aside className={`${styles.image_container} ${!open_menu ? "visible": "unvisible"}`}>
             {images_array.map((e,i) => {
+                
                 return (
-                    <Image key={i} className={pathname === e.href ? "visible": "unvisible"} src={e.img} alt={"section image"} fill></Image>
+                    <CSSTransition
+                        in={pathname === e.href} // La condition pour monter ou démonter l'image
+                        timeout={500} // Doit correspondre à la durée de votre transition CSS
+                        classNames="fade" // Le préfixe pour les classes de transition
+                        unmountOnExit // Démonte le composant après la transition de sortie
+                        mountOnEnter 
+                    >
+                        <Image key={i} className={`${styles.main_image} ${pathname === e.href ? "visible": "unvisible"}`} src={e.img} alt={"section image"} fill></Image>
+                    </CSSTransition>
+                    
                 )
             })}
                 
