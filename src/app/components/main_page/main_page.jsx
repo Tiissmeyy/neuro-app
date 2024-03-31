@@ -11,12 +11,12 @@ const Main_Page =() => {
             <Image className={styles.main_logo} src={"/img/neuro_logo.png"} width={100} height={100} alt="logo du site Neuro" />
 
             {/* Titre du site  */}
-            <h1 className={styles.main_title}>Karine Duval <span>Cabinet de Psychologie et de Neuropsychologie à Chambéry</span></h1>
+            <h1 className={styles.main_title}>Karine Duval <span>Cabinet de Psychologie et de Neuropsychologie à Lyon</span></h1>
             <p className="mb-var">_____</p>
 
             {/* description du site  */}
             <div className={`${styles.main_describe} ${satis.className}`}>
-                <p>Le Cabinet de Psychologie et de Neuropsychologie vous reçoit à Chambéry ​dans un cadre de discrétion et de profond respect.</p>
+                <p>Le Cabinet de Psychologie et de Neuropsychologie vous reçoit à Lyon ​dans un cadre de discrétion et de profond respect.</p>
                 <p>Les informations partagées lors des consultations restent confidentielles.</p>
             </div>
 

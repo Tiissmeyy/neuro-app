@@ -79,7 +79,7 @@ const Aside_Sec = ({close_menu,open_menu}) => {
                     <Image src={"/img/neuro_logo2.png"} alt="logo" width={20} height={20}></Image>
                 </div>
                 <p className={styles.footer_name}>​​ -  Karine Duval  -</p>
-                <p className={styles.footer_adress}>Cabinet de Psychologie & Neuropsychologie  -  42, quai Jean du Jardin 69000 Paris</p>
+                <p className={styles.footer_adress}>Cabinet de Psychologie & Neuropsychologie  -  42, quai Jean du Jardin 69000 Lyon</p>
                 <p className={styles.footer_number}>09 82 37 64 51</p>
             </div>
             </aside>
