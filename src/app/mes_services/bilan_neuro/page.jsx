@@ -7,6 +7,6 @@ import Subpage from "../../components/subpages/subpage";
 export default function NEURO({set_selected_content}) {
   return (
     <>   
-        <Subpage return_home={()=>set_selected_content(0)} content={subpages.neuro} />
+        <Subpage content={subpages.neuro} />
     </>  );
 }

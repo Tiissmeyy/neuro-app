@@ -4,8 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./button.module.css"
 import Image from "next/image";
 import logo from "@/app/assets/neuro_logo3.png"
+import Link from "next/link";
 
-const Button = ({children, actions, color, size, border}) => {
+const Button = ({children, actions, color, size, border, link, href="/"}) => {
     const [hover, set_hover] = useState(false)
     const [container_width, set_container_width] = useState(150)
     const container_ref = useRef(null)
@@ -59,7 +60,16 @@ const Button = ({children, actions, color, size, border}) => {
     return (
         <div ref={container_ref} className={styles.button_container}>
             <Image className={`${styles.img} ${styles.first_img} ${hover ? "visible": "unvisible"}`} src={logo} width={15} height={15} alt="logo de bouton"></Image>
-            <button on
+            {link ? <Link on
+                className={styles.button} 
+                style={final_style} 
+                href={href}
+                onMouseEnter={()=> set_hover(true)}
+                onMouseLeave={()=> set_hover(false)}
+            >
+                
+                {children}
+            </Link> : <button on
                 className={styles.button} 
                 style={final_style} 
                 onClick={()=>{
@@ -70,7 +80,7 @@ const Button = ({children, actions, color, size, border}) => {
             >
                 
                 {children}
-            </button>
+            </button>}
             <Image className={`${styles.img} ${styles.second_img}  ${hover ? "visible": "unvisible"}`} src={logo} width={15} height={15} alt="logo de bouton"></Image>
         </div>
     )

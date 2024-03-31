@@ -8,6 +8,6 @@ export default function EMDR({ set_selected_content}) {
 
   return (
     <>        
-        <Subpage return_home={()=>set_selected_content(0)} content={subpages.emdr} />
+        <Subpage content={subpages.emdr} />
     </>  );
 }

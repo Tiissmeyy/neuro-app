@@ -2,7 +2,7 @@ import Button from "../button/button"
 import styles from "./subpage.module.css"
 import { satis, roboto } from "@/app/fonts"
 
-const Subpage = ({content, return_home}) => {
+const Subpage = ({content}) => {
     let content_jsx = <div className={`${styles.subpage} ${roboto.className}`}>
         <h1 className={satis.className}>{content.title}</h1>
         <p>{content.description}</p>
@@ -18,7 +18,7 @@ const Subpage = ({content, return_home}) => {
         {content.goal.map((e,i)=>{
             return <p key={i}>{e}</p>
         })}
-        <Button actions={[return_home]}>
+        <Button link={true} href={"/"}>
             <p>Retour Acceuil</p>
         </Button>
     </div>
