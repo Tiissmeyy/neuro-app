@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import data from "@/app/data/main_cards_container"
+import data from "@/app/data/main_cards_container.json"
 import styles from "./styles.module.css"
 import { satis } from "@/app/fonts"
 
@@ -12,8 +12,8 @@ const Cards_Container = () => {
             {data.list ? data.list.map((e,i)=>{
                 return (
                     <div key={i} className={styles.card}>
-                        <div className={styles.card_logo}>
-                            <Image  src={e.src} width={130} height={130} alt={`logo de la section ${e.title}`} />
+                        <div className={styles.logo}>
+                            <Image  src={e.src} width={180} height={180} alt={`logo de la section ${e.title}`} />
                         </div>
                         
                         <h3 className={styles.title}>{e.title}</h3>

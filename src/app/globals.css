@@ -1,6 +1,7 @@
 :root {
-    --white: #ffefef;
+    --white: #ffffff;
     --main-color: #af4b38;
+    --test-color: #e2c5c52c;
     --main-color-light: #af4c38b2;
     --text-color: #3f3f3f;
     
@@ -25,12 +26,13 @@ body {
 a {
     color: var(--white);
     text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .main_button {
     border: none;
     padding: 10px 20px;
-    border-radius: 25px;
+    border-radius: 6px;
     height: 50px;
     background-color: var(--main-color);
     color: var(--white);
